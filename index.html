@@ -1,559 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Introduction KryptosAbyss</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introduction To Project KryptosAbyss</title>
+<style>
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #1a1414;
+    color: #e8e0d0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
 
-    html {
-      scroll-behavior: smooth;
-    }
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 40px 25px;
+  }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #050505;
-      color: #f5f0e6;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
+  header {
+    border-bottom: 2px dashed #8b6f3a;
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+  }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(circle at 15% 10%, rgba(255, 0, 45, 0.22), transparent 28%),
-        radial-gradient(circle at 85% 20%, rgba(212, 175, 55, 0.20), transparent 30%),
-        radial-gradient(circle at 50% 90%, rgba(150, 0, 20, 0.26), transparent 35%),
-        linear-gradient(135deg, #000000 0%, #0e0b08 45%, #140101 100%);
-    }
+  .tag {
+    color: #c9a44a;
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
 
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      background-image:
-        linear-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(212, 175, 55, 0.04) 1px, transparent 1px);
-      background-size: 42px 42px;
-      opacity: 0.45;
-    }
+  h1 {
+    font-size: 44px;
+    margin: 0 0 12px 0;
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: -1px;
+  }
 
-    .page {
-      width: min(1120px, 92%);
-      margin: auto;
-      padding: 28px 0 60px;
-    }
+  h1 .k { color: #d4af37; }
+  h1 .a { color: #c0392b; }
 
-    header {
-      min-height: 88vh;
-      display: grid;
-      align-items: center;
-      padding: 50px 0;
-    }
+  .sub {
+    color: #b8a888;
+    font-size: 17px;
+    font-style: italic;
+    margin: 0;
+  }
 
-    .hero {
-      position: relative;
-      padding: 58px;
-      border: 1px solid rgba(212, 175, 55, 0.45);
-      border-radius: 34px;
-      background: linear-gradient(145deg, rgba(12, 12, 12, 0.92), rgba(68, 0, 14, 0.50));
-      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.70), inset 0 0 50px rgba(212, 175, 55, 0.05);
-      overflow: hidden;
-    }
+  h2 {
+    font-size: 26px;
+    color: #d4af37;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    border-left: 4px solid #c0392b;
+    padding-left: 12px;
+    font-weight: normal;
+  }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 320px;
-      height: 320px;
-      right: -110px;
-      top: -110px;
-      border-radius: 50%;
-      background: conic-gradient(from 90deg, #d4af37, #ff0033, #7a0015, #d4af37);
-      filter: blur(2px);
-      opacity: 0.38;
-    }
+  p {
+    margin: 0 0 18px 0;
+    font-size: 16px;
+  }
 
-    .hero::after {
-      content: "KA";
-      position: absolute;
-      right: 28px;
-      bottom: -30px;
-      font-size: 160px;
-      font-weight: 900;
-      color: rgba(212, 175, 55, 0.06);
-      letter-spacing: -12px;
-    }
+  .note {
+    background: #2a1f1a;
+    border-left: 3px solid #c9a44a;
+    padding: 14px 18px;
+    margin: 20px 0;
+    font-size: 15px;
+    color: #d8cab0;
+  }
 
-    .badge {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 9px 16px;
-      border: 1px solid rgba(212, 175, 55, 0.55);
-      border-radius: 999px;
-      color: #ffd86b;
-      background: rgba(212, 175, 55, 0.08);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: none;
-    }
+  .note b {
+    color: #ffd86b;
+  }
 
-    h1, h2, h3 {
-      line-height: 1.12;
-    }
+  ul {
+    padding-left: 22px;
+    margin-bottom: 20px;
+  }
 
-    h1 {
-      max-width: 850px;
-      font-size: clamp(42px, 8vw, 94px);
-      letter-spacing: -3px;
-      color: #ffffff;
-      text-transform: none;
-      position: relative;
-      z-index: 1;
-    }
+  ul li {
+    margin-bottom: 8px;
+  }
 
-    .gold {
-      color: #d4af37;
-      text-shadow: 0 0 22px rgba(212, 175, 55, 0.35);
-    }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+  }
 
-    .red {
-      color: #ff233d;
-      text-shadow: 0 0 18px rgba(255, 35, 61, 0.32);
-    }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #3a2e26;
+  }
 
-    .tagline {
-      max-width: 720px;
-      margin-top: 22px;
-      color: #e7d9bf;
-      font-size: clamp(18px, 2vw, 24px);
-      position: relative;
-      z-index: 1;
-    }
+  th {
+    color: #c9a44a;
+    font-weight: normal;
+    font-style: italic;
+    border-bottom: 2px solid #8b6f3a;
+  }
 
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 34px;
-      position: relative;
-      z-index: 1;
-    }
+  td.amt {
+    color: #ffb84d;
+    font-family: 'Courier New', monospace;
+  }
 
-    .btn {
-      display: inline-block;
-      padding: 13px 20px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      transition: 0.25s ease;
-    }
+  tr.total td {
+    border-top: 2px solid #c0392b;
+    color: #fff;
+    font-weight: bold;
+    padding-top: 12px;
+  }
 
-    .btn-primary {
-      background: linear-gradient(135deg, #d4af37, #ffdf78);
-      color: #120b00;
-      box-shadow: 0 12px 28px rgba(212, 175, 55, 0.25);
-    }
+  .quote {
+    margin: 35px 20px;
+    padding-left: 18px;
+    border-left: 3px solid #c0392b;
+    font-style: italic;
+    color: #cbb98c;
+    font-size: 17px;
+  }
 
-    .btn-secondary {
-      border: 1px solid rgba(255, 35, 61, 0.70);
-      color: #fff0f2;
-      background: rgba(255, 35, 61, 0.10);
-    }
+  hr {
+    border: none;
+    border-top: 1px solid #3a2e26;
+    margin: 40px 0;
+  }
 
-    .btn:hover {
-      transform: translateY(-3px);
-    }
+  footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px dashed #4a3a2e;
+    font-size: 13px;
+    color: #7a6a52;
+  }
 
-    section {
-      margin: 34px 0;
-      padding: 36px;
-      border: 1px solid rgba(212, 175, 55, 0.24);
-      border-radius: 28px;
-      background: rgba(8, 8, 8, 0.78);
-      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
-    }
+  footer p { margin: 4px 0; }
 
-    .section-title {
-      margin-bottom: 16px;
-      font-size: clamp(28px, 4vw, 48px);
-      color: #ffffff;
-      text-transform: none;
-      letter-spacing: -1px;
-    }
+  a {
+    color: #d4af37;
+  }
 
-    .section-title span {
-      color: #d4af37;
-    }
+  .small {
+    font-size: 13px;
+    color: #8a7a62;
+  }
 
-    .lead {
-      color: #dfd0b3;
-      font-size: 18px;
-      max-width: 920px;
-    }
+  /* a tiny bit of asymmetry */
+  .timeline {
+    background: #221a16;
+    padding: 18px 22px;
+    border-radius: 4px;
+    margin: 20px 0;
+    font-size: 15px;
+  }
 
-    .timeline {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
-      margin-top: 26px;
-    }
+  .timeline div {
+    padding: 6px 0;
+    border-bottom: 1px dotted #3a2e26;
+  }
 
-    .stat-card {
-      padding: 22px;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(212, 175, 55, 0.13), rgba(255, 35, 61, 0.08));
-      border: 1px solid rgba(212, 175, 55, 0.25);
-    }
+  .timeline div:last-child { border: none; }
 
-    .stat-card strong {
-      display: block;
-      color: #ffd86b;
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .stat-card span {
-      color: #f0e7d4;
-      font-size: 14px;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 28px;
-      align-items: start;
-      margin-top: 22px;
-    }
-
-    .text-box {
-      padding: 24px;
-      border-left: 4px solid #d4af37;
-      background: rgba(255, 255, 255, 0.035);
-      border-radius: 18px;
-      color: #efe4cf;
-    }
-
-    .warning-box {
-      padding: 24px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, rgba(255, 35, 61, 0.20), rgba(212, 175, 55, 0.08));
-      border: 1px solid rgba(255, 35, 61, 0.35);
-    }
-
-    .warning-box h3 {
-      margin-bottom: 10px;
-      color: #ff5668;
-      font-size: 24px;
-    }
-
-    table {
-      width: 100%;
-      margin-top: 26px;
-      border-collapse: collapse;
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      background: #090909;
-    }
-
-    caption {
-      caption-side: top;
-      padding: 16px;
-      color: #ffd86b;
-      font-size: 22px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    th, td {
-      padding: 16px;
-      text-align: left;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.16);
-    }
-
-    th {
-      background: linear-gradient(135deg, #9b001b, #3b0009);
-      color: #ffd86b;
-      text-transform: uppercase;
-      font-size: 13px;
-      letter-spacing: 1px;
-    }
-
-    td {
-      color: #f4ebdb;
-    }
-
-    tr:nth-child(even) td {
-      background: rgba(212, 175, 55, 0.04);
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-      color: #ffffff;
-      font-weight: 800;
-      background: rgba(255, 35, 61, 0.12);
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-top: 26px;
-    }
-
-    .feature {
-      min-height: 180px;
-      padding: 24px;
-      border-radius: 22px;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 35, 61, 0.08));
-      border: 1px solid rgba(212, 175, 55, 0.24);
-      transition: 0.25s ease;
-    }
-
-    .feature:hover {
-      transform: translateY(-6px);
-      border-color: rgba(212, 175, 55, 0.65);
-      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
-    }
-
-    .icon {
-      display: grid;
-      place-items: center;
-      width: 48px;
-      height: 48px;
-      margin-bottom: 16px;
-      border-radius: 16px;
-      background: #d4af37;
-      color: #110a00;
-      font-size: 24px;
-      font-weight: 900;
-    }
-
-    .feature h3 {
-      margin-bottom: 10px;
-      color: #ffffff;
-      font-size: 21px;
-    }
-
-    .feature p {
-      color: #d8c8a9;
-      font-size: 15px;
-    }
-
-    .quote {
-      margin-top: 28px;
-      padding: 28px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, rgba(212, 175, 55, 0.16), rgba(255, 35, 61, 0.15));
-      border: 1px solid rgba(212, 175, 55, 0.32);
-      color: #ffffff;
-      font-size: 22px;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    footer {
-      margin-top: 34px;
-      padding: 28px;
-      text-align: center;
-      color: #baa987;
-      border-top: 1px solid rgba(212, 175, 55, 0.22);
-    }
-
-    @media (max-width: 900px) {
-      .timeline, .feature-grid, .content-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero {
-        padding: 38px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .page {
-        width: 94%;
-      }
-
-      .hero, section {
-        padding: 24px;
-        border-radius: 22px;
-      }
-
-      .timeline, .feature-grid, .content-grid {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        letter-spacing: -1px;
-      }
-
-      table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-      }
-    }
-  </style>
+  .timeline span {
+    display: inline-block;
+    width: 70px;
+    color: #c9a44a;
+    font-family: 'Courier New', monospace;
+  }
+</style>
 </head>
 <body>
-  <div class="page">
+  <div class="wrap">
+
     <header>
-      <div class="hero">
-        <span class="badge">Project Introduction</span>
-        <h1>Project <span class="gold">Kryptos</span><span class="red">Abyss</span></h1>
-        <p class="tagline">Introducing equality to cultural accessibility to everyone</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#problem">Explore the Problem</a>
-          <a class="btn btn-secondary" href="#solution">Why KryptosAbyss?</a>
-        </div>
-      </div>
+      <div class="tag">— Introduction —</div>
+      <h1>Project <span class="k">Kryptos</span><span class="a">Abyss</span></h1>
+      <p class="sub">Introducing equality to cultural accessibility.</p>
     </header>
 
-    <main>
-      <section>
-        <h2 class="section-title">Internet and Its <span>Effect</span> on Our Lives</h2>
-        <p class="lead">The internet has been booming since 1969. By the mid-1990s, it became publicly accessible and quickly grew into the main road for information, education, entertainment and culture.</p>
+    <h2>Okay so... what is this?</h2>
+    <p>Honestly this started as me getting frustrated. I wanted to watch one movie last month and ended up needing 3 different subscriptions. By the time I found it, I lost interest. That happens way too often now.</p>
 
-        <div class="timeline">
-          <div class="stat-card">
-            <strong>1969</strong>
-            <span>The internet journey began.</span>
-          </div>
-          <div class="stat-card">
-            <strong>1995</strong>
-            <span>Around 16 million global users.</span>
-          </div>
-          <div class="stat-card">
-            <strong>2000</strong>
-            <span>361 million users, about 6% of the population.</span>
-          </div>
-          <div class="stat-card">
-            <strong>2015</strong>
-            <span>The user base reached 3 billion.</span>
-          </div>
-          <div class="stat-card">
-            <strong>2025</strong>
-            <span>5.6 billion users, around 68% of the population.</span>
-          </div>
-        </div>
-      </section>
+    <p>KryptosAbyss is my attempt at building something that helps people actually <i>Get</i> stuff — movies, books, articles, learning material, music and many more — without bouncing between 10 platforms and paying them separately.</p>
 
-      <section id="problem">
-        <h2 class="section-title">Monopoly on the <span>Internet</spmaking culturean></h2>
+    <h2>A quick history of the internet (because context matters)</h2>
+    <p>The internet has been around since '69, but it didn't really hit normal people until the mid-90s. Here's the rough growth:</p>
 
-        <div class="content-grid">
-          <div class="text-box">
-            <p>Over the last decade, digital platforms have shifted from open access to layered monetization. What used to be a single subscription now often includes rental fees, region locks and add-on purchases.</p>
+    <div class="timeline">
+      <div><span>1969</span> it begins (mostly military / academic)</div>
+      <div><span>1995</span> ~16 million people online</div>
+      <div><span>2000</span> 361 million — about 6% of humans</div>
+      <div><span>2015</span> hit 3 billion users</div>
+      <div><span>2025</span> ~5.6 billion. Roughly 2 out of 3 people.</div>
+    </div>
 
-<br>
+    <p>Point is — most of the world is online now. But access to <i>information, entertainment, knowledge and culture</i> is getting harder, not easier.</p>
 
-<p>For example, a user may pay $12 for platform access and still be asked to pay $6 more to watch a new release. Add $15 for an academic e-book and $5 for news access, and the total rises quickly. For many students and families, this isn’t sustainable — it forces hard choices about what knowledge or entertainment is “worth” paying for.</p>
-          </div>
+    <h2>The monopoly problem</h2>
+    <p>It used to be: pay one subscription, watch everything on that service. Now? You pay the subscription <b>and</b> rent the new movie on top of it. Plus a separate app for sports. Plus another for that one show your friend keeps talking about.</p>
 
-          <div class="warning-box">
-            <h3>The Real Access Gap</h3>
-<p>When legal access becomes expensive, fragmented and inconvenient, people look for alternatives. The issue isn’t just price — it’s complexity. Multiple apps, multiple payments, region restrictions and scattered resources create friction that pushes users away from legitimate ecosystems.</p>
-          </div>
-        </div>
+    <div class="note">
+      <b>The issues are the affordability, many apps, many expensive subscriptions, many passwords, region locks, expired free trials u forgot to cancel and many more </b> .
+    </div>
 
-        <table>
-          <caption>Monthly Access Gap</caption>
-          <tr>
-            <th>Item</th>
-            <th>Cost</th>
-            <th>Effect</th>
-          </tr>
-          <tr>
-            <td>OTT membership</td>
-            <td>$12</td>
-            <td>Entry fee to the platform</td>
-          </tr>
-          <tr>
-            <td>Movie rental after membership</td>
-            <td>$6</td>
-            <td>Extra payment for one film</td>
-          </tr>
-          <tr>
-            <td>E-book</td>
-            <td>$15</td>
-            <td>Cost of learning</td>
-          </tr>
-          <tr>
-            <td>News access</td>
-            <td>$5</td>
-            <td>Cost of staying informed</td>
-          </tr>
-          <tr>
-            <td>Total legal access</td>
-            <td>$38</td>
-            <td>Monthly digital culture cost</td>
-          </tr>
-          <tr>
-            <td>Affordable budget</td>
-            <td>$15</td>
-            <td>What many users can spend</td>
-          </tr>
-          <tr>
-            <td>Access gap</td>
-            <td>$23</td>
-            <td>Why people search for free options</td>
-          </tr>
-        </table>
-      </section>
+    <p>Here's a rough breakdown of what monthly "legal access" or "unpirated acess" actually costs an average person:</p>
 
-      <section id="solution">
-        <h2 class="section-title">Why Only <span>KryptosAbyss?</span></h2>
-        <p class="lead"><strong>KryptosAbyss</strong> provides a new dimension to making culture accessible for all. The project focuses on a smoother, safer and more user-friendly way to search for culture, knowledge and digital resources.</p>
+    <table>
+      <tr>
+        <th>What you pay for</th>
+        <th>Cost</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td>OTT subscription</td>
+        <td class="amt">$12</td>
+        <td>just to get in the door</td>
+      </tr>
+      <tr>
+        <td>Rental for a new movie</td>
+        <td class="amt">$6</td>
+        <td>yes, even after subscribing</td>
+      </tr>
+      <tr>
+        <td>One e-book</td>
+        <td class="amt">$15</td>
+        <td>academic ones cost more</td>
+      </tr>
+      <tr>
+        <td>News paywall</td>
+        <td class="amt">$5</td>
+        <td>for one publication</td>
+      </tr>
+      <tr class="total">
+        <td>Total</td>
+        <td class="amt">$38</td>
+        <td>per month</td>
+      </tr>
+      <tr>
+        <td>What most students can spend universally</td>
+        <td class="amt">~$15</td>
+        <td>being generous</td>
+      </tr>
+      <tr>
+        <td><b>The gap</b></td>
+        <td class="amt"><b>$23</b></td>
+        <td>and this is why piracy exists</td>
+      </tr>
+    </table>
 
-        <div class="feature-grid">
-          <div class="feature">
-            <div class="icon">1</div>
-            <h3>Accessible</h3>
-            <p>Instead of navigating five different subscriptions, users can discover available resources through a clearer and more organized pathway.</p>
-          </div>
+    <p class="small">(numbers vary by time,region,need and other factors, but the pattern is the almost same everywhere)</p>
+    <h2>Problem With Piracy</h2>
+    <p> <b> Piracy nowdays is almost full of problems. Most website are filled with malware, virus and other hazardous programm. <u>They evntually harm your pc or just destruct it.</u> </b></p>
+<p><b><i><u>Those numerous redirects, 18+ advertisments, malicious urls, phising links and many more are anohter bad dimensions of piracy.</u></i></b></p>
+    <h2>So what's the idea</h2>
+    <p>KryptosAbyss isn't trying to be a "piracy" service. There's enough of those. What I'm trying to build is more of a <b>new platform </b> — a place where you search for something and you get stream, download or view link immediately.</p>
 
-          <div class="feature">
-            <div class="icon">2</div>
-            <h3>Safer</h3>
-            <p>By guiding users toward structured and legitimate sources, KryptosAbyss reduces the risks associated with unsafe or misleading websites.</p>
-          </div>
+    <p>A few things I'm focused on:</p>
 
-          <div class="feature">
-            <div class="icon">3</div>
-            <h3>Simple</h3>
-           <p>A clean interface focused on search and discovery — no unnecessary clutter, no endless redirects.</p>
-          </div>
+    <ul>
+      <li><b>One platform for almost alll needs</b> No bouncing from website to website or app to app needed. </li>
+      
+      <li><b>Safer than the alternatives.</b> Sketchy sites carry malware. I want to point people toward real and verified sources.</li>
+      
+      <li><b>Cultural focus.</b> Allowing people to take part in making and evolution of culture.</li>
+    </ul>
 
-          <div class="feature">
-            <div class="icon">4</div>
-            <h3>Cultural</h3>
-            <p>The goal is long-term: enabling wider participation in film, literature, journalism,entertainment and educational content.</p>
-          </div>
-        </div>
+    <div class="quote">
+      "Access to culture should depend on curiosity, not on how many subscriptions you can afford."
+    </div>
 
-        <div class="quote">
-          “Access to culture should depend on curiosity,not on how many subscriptions you can afford.”
-        </div>
-      </section>
-    </main>
+    <p>That's basically the whole thing. It's early. There's a lot to figure out. But I think it's worth trying.</p>
 
+    <hr>
+
+    <p class="small">If you want to know more or have thoughts, reach out. This is a work that has just started by a completely beginner who need help and guidance</p>
+<br><a href="mailto:hisenrajj@gmail.com">Reach Me</a>
     <footer>
-      <p>KryptosAbyss Project Introduction </p>
+      <p>KryptosAbyss project intro </p>
+      <p>last updated: 18 <sup>th</sup>, Jun, 2026 </p>
     </footer>
+
   </div>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0d39d75dff80b24',t:'MTc4MTcxNTY3NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
